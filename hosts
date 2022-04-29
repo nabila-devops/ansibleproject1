@@ -1,0 +1,22 @@
+[myself]
+ansible-engine ansible_connection=local
+
+
+[frontend]
+node1 ansible_host=172.31.84.83 max_connections=10000
+
+[backend]
+node2 ansible_host=172.31.82.19 max_connections=5000
+
+[test]
+node1
+node2
+
+[frontend:vars]
+host_role='frontend'
+
+[backend:vars]
+host_role='backend'
+
+[all:vars]
+section_header='[global_config']

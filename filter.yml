@@ -1,0 +1,13 @@
+---
+- hosts: test
+  vars:
+    employee1:
+      name: nabila
+      job: devops engineer
+      skill: junior
+  tasks:
+  - name: transform dictionnary into a list
+    template:
+      src: filter.j2
+      dest: /tmp/filter.out
+
